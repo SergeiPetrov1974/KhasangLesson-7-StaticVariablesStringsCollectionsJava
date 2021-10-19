@@ -33,6 +33,7 @@ import static io.khasang.Cat.count;
  */
 public class Homework7_1 {
     public static void main(String[] args) {
+        /*
        Cat cat1 = new Cat("Vaska");
        Cat cat2 = new Cat("Tom");
        Cat cat3 = new Cat("Masya");
@@ -42,9 +43,14 @@ public class Homework7_1 {
        cat2.showId();
        cat3.showId();
        cat4.showId();
-       cat1.plate.showFood();
-       Cat.showBowlAndPlate("Мясом", 1, "Молоком", 2);
+       //cat1.plate.showFood();
+       //Cat.showBowlAndPlate("Мясом", 1, "Молоком", 2);
 
+         */
+        Plate plate = new Plate();
+        Cat cat = new Cat();
+        plate.feed(cat);
+        //cat.eatFrom(plate);
 
 
 
