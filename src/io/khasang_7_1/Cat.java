@@ -1,4 +1,4 @@
-package io.khasang;
+package io.khasang_7_1;
 
 public class Cat {
     private static int catCounter = 0;
