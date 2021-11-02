@@ -1,7 +1,5 @@
 package io.khasang;
 
-import static io.khasang.Cat.count;
-
 /*
 1. Сделайте класс Кошка так, чтобы у каждой кошки был индивидуальный номер по порядку,
 который бы увеличивался для новой кошки каждый раз, когда создается новая кошка.
@@ -33,28 +31,62 @@ import static io.khasang.Cat.count;
  */
 public class Homework7_1 {
     public static void main(String[] args) {
-        /*
-       Cat cat1 = new Cat("Vaska");
-       Cat cat2 = new Cat("Tom");
-       Cat cat3 = new Cat("Masya");
-       Cat cat4 = new Cat("Bold");
-       Cat.showCount();
-       cat1.showId();
-       cat2.showId();
-       cat3.showId();
-       cat4.showId();
-       //cat1.plate.showFood();
-       //Cat.showBowlAndPlate("Мясом", 1, "Молоком", 2);
 
-         */
-        Plate plate = new Plate();
-        Cat cat = new Cat();
-        plate.feed(cat);
-        //cat.eatFrom(plate);
+        Cat cat1 = new Cat();
+        Cat cat2 = new Cat();
+        Cat cat3 = new Cat();
 
+        System.out.println(cat1.getNumber());
+        System.out.println(cat2.getNumber());
+        System.out.println(cat3.getNumber());
+        System.out.println(cat1.getNumber());
 
+        System.out.println("количество еды в общей миске = " + Cat.getSharedBowl());
+        System.out.println("количество воды на общей тарелке = " + Cat.getSharedPlate());
+        System.out.println("=======================================");
 
+        System.out.println("'Static' кошка 1 ест");
+        cat1.eatStatic();
+        System.out.println("'Static' кошка 1 пьет");
+        cat1.drinkStatic();
+        System.out.println("'Static' кошка 2 ест");
+        cat2.eatStatic();
+        System.out.println("'Static' кошка 2 пьет");
+        cat2.drinkStatic();
+        System.out.println("'Static' кошка 3 ест");
+        cat3.eatStatic();
+        System.out.println("'Static' кошка 3 пьет");
+        cat3.drinkStatic();
+        System.out.println("=======================================");
 
+        cat1.showAboutCat();
+        cat2.showAboutCat();
+        cat3.showAboutCat();
+        System.out.println("=======================================");
 
+        Bowl bowl1 = new Bowl();
+        Plate plate1 = new Plate();
+        Bowl bowl2 = new Bowl();
+        Plate plate2 = new Plate();
+        Bowl bowl3 = new Bowl();
+        Plate plate3 = new Plate();
+
+        System.out.println("Кошка1 съела");
+        cat1.eat(bowl1);
+        System.out.println("Кошка1 выпила");
+        cat1.drink(plate1);
+        System.out.println("Кошка2 съела");
+        cat2.eat(bowl2);
+        System.out.println("Кошка2 выпила");
+        cat2.drink(plate2);
+        System.out.println("Кошка3 съела");
+        cat3.eat(bowl3);
+        System.out.println("Кошка3 выпила");
+        cat3.drink(plate3);
+        System.out.println("=======================================");
+
+        cat1.showAboutCat();
+        cat2.showAboutCat();
+        cat3.showAboutCat();
     }
 }
