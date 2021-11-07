@@ -1,33 +1,13 @@
 package io.khasang_7_3;
 
 public class Author {
-    private int publicationYear;
-    private String surname;
-    private String firstName;
+    private String name;
 
-    public Author(String surname, String firstName, int publicationYear) {
-        this.surname = surname;
-        this.firstName = firstName;
-        this.publicationYear = publicationYear;
+    public Author(String name) {
+        this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public int getPublicationYear() {
-        return publicationYear;
-    }
-
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
+    public String getName() {
+        return name;
     }
 }

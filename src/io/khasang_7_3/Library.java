@@ -1,43 +1,57 @@
 package io.khasang_7_3;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Library {
-    private List<Author> authors = new ArrayList<>();
+    private Book book;
+    private ArrayList<Book> catalog = new ArrayList<>();
+    private int counter = 0;
 
-    public void add(String surname, String firstName, int publicationYear) {
-        authors.add(new Author(surname, firstName, publicationYear));
+    public void addBook(Book book) {
+        catalog.add(book);
+        System.out.println("Книга №" + getCountBook() + " " + book.getBookInfo());
     }
 
-    public void changeFirstName(String firstName) {
-        for (int i = 0; i < authors.size(); i++) {
-            authors.get(i).setFirstName(firstName);
-        }
+    public void removeBook(int id) {
+        catalog.remove(id);
     }
 
-    public void removeSurname(String surname) {
-        for (int i = 0; i < authors.size(); i++) {
-            if (surname.toLowerCase().equals(authors.get(i).getSurname().toLowerCase())) {
-                authors.remove(i);
-                i--;
+    public int getCountBook() {
+        return catalog.size();
+
+    }
+
+    public String getBookInfoById(int id) {
+        book = catalog.get(id);
+        return book.getBookInfo();
+    }
+
+    public int searchBookByName(String text) {
+        String nameBook;
+        for (int i = 0; i < getCountBook(); i++) {
+            book = catalog.get(i);
+            nameBook = book.getName().toLowerCase();
+            if (nameBook.contains(text.toLowerCase())) {
+                System.out.println(book.getBookInfo());
+                counter++;
             }
         }
+        if (counter == 0) {
+            counter = searchBookByWriter(text);
+        }
+        return counter;
     }
 
-    public void changeYearBySurname(String surname, int newYear) {
-        for (int i = 0; i < authors.size(); i++) {
-            if (surname.toLowerCase().equals(authors.get(i).getSurname().toLowerCase())) {
-                authors.get(i).setPublicationYear(newYear);
+    public int searchBookByWriter(String text) {
+        String nameWriter;
+        for (int i = 0; i < getCountBook(); i++) {
+            book = catalog.get(i);
+            nameWriter = book.getAuthor().toLowerCase();
+            if (nameWriter.contains(text.toLowerCase())) {
+                System.out.println(book.getBookInfo());
+                counter++;
             }
         }
-    }
-
-
-    public void show() {
-        for (int i = 0; i < authors.size(); i++) {
-            System.out.println("Книга автора " + authors.get(i).getSurname() + " " + authors.get(i).getFirstName() +
-                    " была опубликована в " + authors.get(i).getPublicationYear());
-        }
+        return counter;
     }
 }

@@ -53,7 +53,7 @@ public class Cat {
         double temp = 10.0 + (Math.random() * 10);
         plate.waterCount -= temp;
         waterConsumed += temp;
-        System.out.println("Колличество съеденной еды = " + temp);
+        System.out.println("Колличество выпитой воды = " + temp);
         System.out.println("Остаток воды = " + plate.waterCount);
     }
 
