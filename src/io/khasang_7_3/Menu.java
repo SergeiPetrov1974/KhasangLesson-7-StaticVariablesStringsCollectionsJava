@@ -2,7 +2,6 @@ package io.khasang_7_3;
 
 public class Menu {
 
-
     public static void start() {
         Library library = new Library();
         Reader reader = new Reader();
