@@ -36,14 +36,10 @@ package io.khasang_7_3;
 
 public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("Hello Word!", "Petrov Sergey", 1974);
-        Book book2 = new Book("Word Hello!", "Sergeev Petr", 1984);
-        Book book3 = new Book("Book Manager", "Dolgov Igor", 2015);
-        Library library = new Library();
-        library.addBook(book1);
-        library.addBook(book2);
-        library.addBook(book3);
-        library.searchBookByWriter("Petrov sergey");
-
+        Menu.start();
     }
 }
+
+
+
+

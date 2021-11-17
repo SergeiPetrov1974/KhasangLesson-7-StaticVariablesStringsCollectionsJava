@@ -7,6 +7,11 @@ public class Library {
     private ArrayList<Book> catalog = new ArrayList<>();
     private int counter = 0;
 
+
+    public ArrayList<Book> getCatalog() {
+        return catalog;
+    }
+
     public void addBook(Book book) {
         catalog.add(book);
         System.out.println("Книга №" + getCountBook() + " " + book.getBookInfo());
